@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/index.css">
+<script src="js/index.js"></script>
+<title>Drums</title>
+</head>
+<body>
+<div class="box">
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/bubbles.mp3"></audio>
+ </span>
+ </div>
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/clay.mp3"></audio>
+ </span>
+ </div>
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/confetti.mp3"></audio>
+ </span>
+ </div>
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/glimmer.mp3"></audio>
+ </span>
+ </div>
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/moon.mp3"></audio>
+ </span>
+ </div>
+ 
+ <div class="drum">
+ <span>
+   <audio class="sound" type="mp3/audio" src="sounds/ufo.mp3"></audio>
+ </span>
+ </div>
+ 
+  
+</div>
+
+<script>
+
+const sounds = document.querySelectorAll(".sound");
+const pads = document.querySelectorAll(".drum");
+const span = document.querySelectorAll(".drum span");
+const body = document.querySelector("body");
+const color = [
+  "#00ccff",
+  "#1500ff",
+  "#ff00a6",
+  "#ff0003",
+  "#ffaa00",
+  "#1fff00"
+  ];
+
+pads.forEach((pad, index) => {
+pad.addEventListener('click', ()=> {
+
+span[index].style.background = color[index];
+body.style.background = color[index];
+span[index].style.boxShadow = " 0 0 4px " + color[index];
+sounds[index].currentTime =0;
+sounds[index].play();
+//console.log(color[index]);
+  
+});
+});
+
+</script>
+</body>
+</html>
